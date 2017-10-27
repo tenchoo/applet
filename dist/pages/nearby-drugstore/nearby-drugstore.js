@@ -1,0 +1,1 @@
+"use strict";Page({data:{},onLoad:function(n){console.log(n.scene.id)},onReady:function(){},onShow:function(){},onHide:function(){},onUnload:function(){},onPullDownRefresh:function(){},onReachBottom:function(){},onShareAppMessage:function(){}});

@@ -1,0 +1,1 @@
+"use strict";Page({data:{radioData:""},radioChange:function(a){var t=a.detail.value;this.setData({radioData:t})}});

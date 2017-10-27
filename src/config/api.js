@@ -33,6 +33,8 @@ const api = {
   add_doctor: rootUrl + 'client/add-doctor',
   // 删除医生
   doctor_delete: rootUrl + 'client/doctor-delete',
+  // 删除终端
+  client_delete: rootUrl + 'client/delete',
   // 医生设置星标
   doctor_star_mark: rootUrl + 'client/doctor-star-mark',
   // 药店列表
@@ -63,6 +65,8 @@ const api = {
   client_detail: rootUrl + 'client/detail',
   // 药店设置星标
   client_star_mark: rootUrl + 'client/client-star-mark',
+  // 获取省
+  province: rootUrl + 'common/province',
 };
 
 

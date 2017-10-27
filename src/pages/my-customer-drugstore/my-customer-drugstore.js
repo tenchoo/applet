@@ -101,5 +101,31 @@ Page({
     })
 
   },
+  // 长按删除
+  delSelf: function (e) {
+    let id = e.currentTarget.id;
+    wxAPI.showModal('', '是否删除该客户？', '删除')
+      .then(res => {
+        if(res.confirm){
+          wxAPI.postRequest(api.client_delete,{
+            client_id: id
+          })
+            .then(res=>{
+              if(0 === res.data.status){
+                let obj = {
+                  title: '操作成功',
+                  icon:'success',
+                };
+                wxAPI.wxPromiseObj(wx.showToast,obj)
+                  .then(res=>{
+                    wx.navigateTo({
+                      url:'my-customer-drugstore'
+                    })
+                  })
+              }
+            })
+        }
+      })
+  },
 
 });

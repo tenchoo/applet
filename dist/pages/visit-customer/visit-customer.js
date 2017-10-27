@@ -1,0 +1,1 @@
+"use strict";var _api=require("../../config/api"),wxAPI=require("../../common/js/wxAPI");Page({data:{placeHolder:"请输入医生姓名",screenItem_1:"医院等级",screenItem_2:"医生等级",screenItem_3:"筛选科室"},onLoad:function(e){},onShow:function(){}});

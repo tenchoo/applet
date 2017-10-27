@@ -1,4 +1,5 @@
 # applet
 applet 微信小程序
 1.npm install
-2.gulp
+2.gulp img
+3.gulp

@@ -1,0 +1,92 @@
+<view class="head" bindtap="viewDataPicker">
+  <view class="head-date">{{year}}年{{month}}月</view>
+  <view class="arrow-down {{pickerBool?'arrow-up':''}}"></view>
+</view>
+<view class="calendar">
+  <view class="calendar-week">
+    <view class="calendar-week_item" wx:for="{{calendarWeek}}" wx:key="{{index}}">{{item}}</view>
+  </view>
+  <view class="calendar-day">
+    <!--前月-->
+    <view class="calendar-day_item prev-month" wx:for="{{prevMonthData}}" wx:key="{{index}}">
+      <view class="shade" data-prev="{{index}}" bindtap="getPrevDayTask"></view>
+      <view class="calendar-day_item_head">
+        <view>{{item.ind}}</view>
+        <view class="calendar-task_num" wx:if="{{item.taskList.length}}">{{item.taskList.length}}</view>
+      </view>
+      <block wx:for="{{item.taskList}}" wx:key="*this">
+        <view wx:if="{{index<3}}" class="calendar-day_item-list {{'1' === item.status?'calendar-task_unfinished':''}}" id="{{item.task_id}}">{{item.name}}</view>
+      </block>
+      <view class="calendar-day_item-list ellec" wx:if="{{item.taskList.length>3}}">...</view>
+    </view>
+    <!--当月-->
+    <view class="calendar-day_item" wx:for="{{monthData}}" wx:key="{{index}}">
+      <view class="shade" data-id="{{index}}" bindtap="getDayTask"></view>
+      <view class="calendar-day_item_head">
+        <view>{{index+1}}</view>
+        <view class="calendar-task_num" wx:if="{{item.taskList.length}}">{{item.taskList.length}}</view>
+      </view>
+      <block wx:for="{{item.taskList}}" wx:key="*this">
+        <view wx:if="{{index<3}}" class="calendar-day_item-list {{'1' === item.status?'calendar-task_unfinished':''}}" id="{{item.task_id}}">{{item.name}}</view>
+      </block>
+      <view class="calendar-day_item-list ellec" wx:if="{{item.taskList.length>3}}">...</view>
+    </view>
+    <!--下月-->
+    <view class="calendar-day_item next-month" wx:for="{{nextMonthData}}">
+      <view class="shade" data-nex="{{index}}" bindtap="getNextDayTask"></view>
+      <view class="calendar-day_item_head">
+        <view>{{index+1}}</view>
+        <view class="calendar-task_num" wx:if="{{item.taskList.length}}">{{item.taskList.length}}</view>
+      </view>
+      <block wx:for="{{item.taskList}}" wx:key="*this">
+        <view wx:if="{{index<3}}" class="calendar-day_item-list {{'1' === item.status?'calendar-task_unfinished':''}}" id="{{item.task_id}}">{{item.name}}</view>
+      </block>
+      <view class="calendar-day_item-list ellec" wx:if="{{item.taskList.length>3}}">...</view>
+    </view>
+  </view>
+</view>
+
+<!--弹出框 日任务-->
+<view class="modal" wx:if="{{modalBool}}">
+  <view class="modal-cont">
+    <image src="http://xsj.jooyum.com.cn/resource/img_banner_trip.png" class="modal-head-img"></image>
+    <view class="modal-data">{{selectDate}}</view>
+    <view class="border-line"></view>
+    <view class="modal-container">
+      <block wx:for="{{selectTaskList}}" wx:key="*this">
+        <view class="modal-content">
+          <view class="modal-cont-tit">
+            <view>{{index+1}}.</view>
+            <view class="modal-finished" wx:if="{{'2'==item.status}}">【已完成】</view>
+            <view class="modal-unfinished" wx:if="{{'1'==item.status}}">【未完成】</view>
+            <view>{{item.name}}</view><view wx:if="{{item.class=='2'}}">{{item.client_name}}</view>
+          </view>
+          <view wx:if="{{item.summary}}">
+            小结：{{item.summary}}
+          </view>
+        </view>
+        <view class="border-line"></view>
+      </block>
+    </view>
+    <image class="modal-close" src="http://xsj.jooyum.com.cn/resource/btn_close_white.svg" catchtap="closeModal"></image>
+  </view>
+</view>
+<!--日期选择-->
+<view class="picker-bg" wx:if="{{pickerBool}}"></view>
+<view class="picker-outer {{pickerBool?'picker-outer_move':''}}">
+  <view class="picker-container">
+    <picker-view indicator-class="select-picker" class="picker" value="{{pickerVal}}" bindchange="changeDate">
+      <picker-view-column>
+        <view wx:for="{{years}}" class="picker-item">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}" class="picker-item">{{item}}月</view>
+      </picker-view-column>
+    </picker-view>
+    <view class="picker-fun">
+      <view catchtap="pickerCancel" class="picker-fun_btn btn-cancel">取消</view>
+      <view style="width:124rpx;"></view>
+      <view catchtap="pickerSure" class="picker-fun_btn btn-sure">确定</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,1 @@
+"use strict";var _api=require("../../config/api"),wxAPI=require("../../common/js/wxAPI"),app=getApp();Page({data:{screenData:["地区筛选","医院等级","筛选科室"]},onLoad:function(a){},onShow:function(){app.getHospitalPage(this)},onReachBottom:function(){this.data.currentPage<this.data.pageCount&&app.getHospitalPage(this,{page:parseInt(this.data.currentPage)+1})}});

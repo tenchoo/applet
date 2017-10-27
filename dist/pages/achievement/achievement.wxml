@@ -1,0 +1,28 @@
+<!--pages/achievement/achievement.wxml-->
+<view class = "self-achievement">
+
+
+    <image class="selfhead" src="../../img/btn_my_highlight.png"
+    > </image>
+
+
+    <!--<image class="selfhead" src="../../img/icon_my_client.svg"> </image>-->
+    <!--<view style="font-weight:bold;color:blue">啊福利局啊是放假啊付款了</view>-->
+    <view class="font-center">
+
+        <view style = "font-weight: bold;color: blue; font: 100rpx" class="big-bule-font">
+        今日获得成就
+        </view>
+        <view style = "color: gray; " class="small-gray-font">
+            我今天的客户拜访量为<view style="color:blue; display: inline-block;font-weight: bold">25 </view>,击败了全国
+             <view style="color:red; display: inline-block;font-weight: bold">35% </view>的同行!
+        </view>
+        <view style = "color: gray; " class="small-gray-font">
+            我今天的拜访里程为<view style="color:blue; display: inline-block;font-weight: bold">25公里 </view>.
+            击败了全国<view style="color:red; display: inline-block;font-weight: bold">35% </view>的同行!
+        </view>
+        <image class="img-center" src = "../../img/btn_my_highlight.png"></image>
+
+    </view>
+
+</view>

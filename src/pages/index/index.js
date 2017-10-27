@@ -7,7 +7,7 @@ Page({
   data: {
     province:'北京',
     // 今日行程
-    todayTripData:{},
+    todayTripData:[],
     // 小蜜蜂分享动画
     achievementShareBee: {},
     achievementShareBtn: {},
@@ -18,11 +18,11 @@ Page({
     // banner内容
     bannerUrl: [{
         imgUrl: '../../img/img_banner_home.png',
-        navUrl: '../signup/signup'
+        navUrl: ''
       },
       {
         imgUrl: '../../img/img_banner_home.png',
-        navUrl: '../signup/signup'
+        navUrl: ''
       },
       {
         imgUrl: '../../img/img_banner_home.png',
@@ -101,6 +101,10 @@ Page({
           console.log(res);
           _this.setData({
             todayTripData:res.data.data.taskList
+          })
+        }else{
+          _this.setData({
+            todayTripData:[]
           })
         }
       })

@@ -232,10 +232,22 @@ App({
     }).then(res=>{
       if(0===res.data.status){
         let data=res.data.data;
+        let thirdPartyId = data.clientRow.third_party_id;
+        let marker={
+          longitude:data.clientRow.lng,
+          latitude:data.clientRow.lat,
+          iconPath:'../../img/icon_drugstore.png',
+          width:30,
+          height:30,
+        };
+        let markers=[marker];
         that.setData(data);
         that.setData({
-          star_mark:data.clientRow.star_mark
-        })
+          star_mark:data.clientRow.star_mark,
+          isMap:thirdPartyId !== '',
+          markers,
+        });
+
       }else{
         console.log(res.data.msg);
       }

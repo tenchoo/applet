@@ -1,17 +1,17 @@
 {
-  "name": "little-bee",
+  "name": "applet",
   "version": "0.1.0",
-  "description": "little bee",
+  "description": "applet",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "flurry",
-  "license": "ISC",
+  "author": "tingbelieveyan",
+  "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-clean": "^0.3.2",

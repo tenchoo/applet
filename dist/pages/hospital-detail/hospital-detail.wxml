@@ -1,0 +1,60 @@
+<view class="header">
+  <image src="../../img/icon_hospital_white.svg" class="header-icon"></image>
+  <view class="header-tit">{{hospitalName}}</view>
+</view>
+<view class="detail">
+
+</view>
+<!--详情收起展开按钮-->
+<view class="detail-btn">
+  展示详情
+  <view class="arrow-down"></view>
+</view>
+<view class="border-line"></view>
+<view class="select-cont">
+  <view class="select-cont_left">
+    <view class="select-cont_tit">科室</view>
+    <view class="border-line"></view>
+    <block wx:for="{{departmentList}}" wx:key="*this">
+      <view class="select-left_item" id="{{index}}">
+        <view class="select-item_left">
+          <view class="select-item_tit">{{item.department_name}}</view>
+          （{{item.doctor_list.length}}位医生）
+        </view>
+      </view>
+      <view class="border-line"></view>
+    </block>
+  </view>
+  <view class="select-cont_right">
+    <view class="select-cont_tit">医生</view>
+    <view class="border-line"></view>
+    <checkbox-group bindchange="checkboxChange">
+      <block wx:for="{{departmentList}}" wx:key="*this">
+        <block wx:for="{{item.doctor_list}}" wx:key="*this">
+        <view class="select-right_item">
+          <view class="select-item_left">
+            <view class="select-item_tit select-item_right_tit" id="{{item.doctor_id}}">{{item.doctor_name}}</view>
+            {{item.position}}
+          </view>
+            <label id="">
+              <view class="checkbox-item" wx:if="{{}}"></view>
+              <icon class="tmi-icon" type="success" size="14" color="#28b9ff"></icon>
+              <checkbox value="a" color="#50a0ff" class="radio" />
+            </label>
+        </view>
+        <view class="border-line"></view>
+        </block>
+      </block>
+    </checkbox-group>
+  </view>
+</view>
+<!--footer-fun-->
+<view class="footer-fun">
+  <navigator class="footer-fun_edit">
+    <image src="../../img/icon_double_arrow.svg" class="footer-fun_edit_img"></image>
+    已选择 4 人
+  </navigator>
+  <navigator url="" class="footer-fun_action" hover-class="footer-fun_action_hover">
+    添加至我的客户
+  </navigator>
+</view>

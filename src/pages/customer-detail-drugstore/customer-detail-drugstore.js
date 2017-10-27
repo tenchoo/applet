@@ -16,7 +16,7 @@ Page({
   },
   onShow:function(e){
     app.getClientDetail(this,this.data.clientId);
-
+    app.getTaskPage(this, this.data.clientId, '1', '1');
   },
   // tab栏点击
   tabClick: function (e) {
@@ -31,4 +31,9 @@ Page({
   toggleStar:function(){
     app.toggleStar(this, api.client_star_mark, this.data.clientId,true);
   },
+  onReachBottom: function () {
+    if (this.data.currentPage < this.data.pageCount) {
+      app.getTaskPage(this, this.data.doctorId, '1', parseInt(this.data.currentPage) + 1 + '');
+    }
+  }
 });

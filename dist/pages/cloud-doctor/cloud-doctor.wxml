@@ -1,0 +1,29 @@
+<import src="../../common/template/template.wxml"/>
+
+<!--搜索框-->
+<template is="searchGroup" data="{{placeHolder}}"></template>
+<!--筛选-->
+<!--<view class="border-line"></view>-->
+<template is="screen" data="{{screenData}}"></template>
+<block wx:for="{{hospitalPage}}" wx:key="*this">
+  <navigator url="../hospital-detail/hospital-detail?hospital={{item.id}},{{item.name}}" class="list">
+    <view class="list-head">
+      <image src="../../img/icon_hospital.svg" class="list-head_icon" alt=""></image>
+    </view>
+    <view class="list-body">
+      <view class="list-body_tit">{{item.name}}</view>
+      <view class="list-body_other">
+        <view class="list-body_other_item">
+          <view>医院等级：</view>
+          <view class="list-body_other_item_content">{{item.level}}</view>
+        </view>
+        <view class="list-body_other_item">
+          <view>地<view class="hidden">占位</view>址：</view>
+          <view class="list-body_other_item_content">{{item.address}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="arrow-right"></view>
+  </navigator>
+  <view class="border-line"></view>
+</block>

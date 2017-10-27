@@ -1,0 +1,117 @@
+<!--今日行程-->
+<template name="todayTrip">
+  <view class="today-trip">
+
+  <block wx:for="{{todayTripData}}" wx:key="*this">
+    <navigator url="../visit-detail/visit-detil?task_id={{item.task_id}}" class="trip-tit pl70" hover-class="none" wx:if="{{'1' === item.class}}">
+      <view class="trip-mark">
+        <!--<view class="trip-mark_line"></view>-->
+        <view class="trip-mark_icon trip-mark_icon_tit">
+          <view class="tmi-icon tmi-icon_unfinished" wx:if="{{'1' === item.class && '1' === item.status}}"></view>
+          <icon class="tmi-icon" wx:if="{{'1' === item.class && '2' === item.status}}" type="success" size="14" color="#28b9ff"></icon>
+        </view>
+      </view>
+      {{item.client_name}}
+      <view class="trip-note" wx:if="{{item.level}}">（{{item.level}}）</view>
+      <!--右箭头-->
+      <view class="arrow-right trip-arrow" wx:if="{{'1' === item.class}}"></view>
+    </navigator>
+    <view class="trip-tit pl70" hover-class="none" wx:if="{{'2' === item.class}}">
+      <view class="trip-mark">
+        <!--<view class="trip-mark_line"></view>-->
+        <view class="trip-mark_icon trip-mark_icon_tit">
+          <view class="tmi-icon tmi-icon_unfinished" wx:if="{{'1' === item.class && '1' === item.status}}"></view>
+          <icon class="tmi-icon" wx:if="{{'1' === item.class && '2' === item.status}}" type="success" size="14" color="#28b9ff"></icon>
+        </view>
+      </view>
+      {{item.client_name}}
+      <view class="trip-note" wx:if="{{item.level}}">（{{item.level}}）</view>
+      <!--右箭头-->
+      <view class="arrow-right trip-arrow" wx:if="{{'1' === item.class}}"></view>
+    </view>
+    <block wx:for="{{item.doctorList}}">
+      <navigator url="../visit-detail/visit-detil?task_id={{item.task_id}}" class="trip-ele pl70" hover-class="none">
+        <view class="trip-mark">
+          <!--<view class="trip-mark_line"></view>-->
+          <view class="trip-mark_icon">
+            <view class="tmi-icon tmi-icon_unfinished" wx:if="{{'1' === item.status}}"></view>
+            <icon class="tmi-icon" type="success" size="15" color="#28b9ff" wx:if="{{'2' === item.status}}"></icon>
+          </view>
+        </view>
+        {{item.doctor_name}}
+        <view class="trip-note">{{item.department_name}}</view>
+        <view class="trip-note">{{item.duty}}</view>
+        <!--右箭头-->
+        <view class="arrow-right trip-arrow"></view>
+      </navigator>
+    </block>
+
+  </block>
+
+  </view>
+</template>
+
+<!--搜索-->
+<template name="searchGroup">
+  <view class="search-group">
+    <view class="search-input_group">
+      <image src="../../img/icon_search_grey.svg" class="search-input_img" alt="search"></image>
+      <input type="text" bindblur="blurSearchInput" class="search-input_txt" value="{{searchInputValue}}" placeholder-style="color:#fff" confirm-type="search" placeholder="{{placeHolder}}" />
+    </view>
+    <view class="btn-search" bindtap="search">搜索</view>
+  </view>
+</template>
+
+<!--筛选-->
+<template name="screen">
+  <view class="screen">
+    <block wx:for="{{screenData}}" wx:key="*this">
+      <view class="screen-item" catchtap="screen{{index+1}}">{{item}}<view class="screen-arrow-down"></view></view>
+    </block>
+  </view>
+</template>
+<!--医生列表-->
+<template name="doctorList">
+    <navigator url="../customer-detail/customer-detail?doctor_id={{doctor_id}}" id="{{doctor_id}}" class="customer-body_item" catchlongpress="delSelf">
+     <view class="doctor-list_left">
+       <view class="customer-item_info">
+         <view class="customer-name">{{name}}</view>
+         <view class="customer-level_A customer-level" wx:if="{{'A' === level}}">A</view>
+         <view class="customer-level_B customer-level" wx:if="{{'B' === level}}">B</view>
+         <view class="customer-level_C customer-level" wx:if="{{'C' === level}}">C</view>
+         <view class="customer-level_D customer-level" wx:if="{{'D' === level}}">D</view>
+         <view>{{department_name}}</view>
+         <view class="customer-position">{{job}}</view>
+         <view>{{duty}}</view>
+       </view>
+       <view class="customer-item_hospital">
+         所在医院：{{client_name}}
+       </view>
+     </view>
+      <view class="warnning">
+        资料未全
+      </view>
+    </navigator>
+  <view class="border-line"></view>
+</template>
+<!--药店列表-->
+<template name="clientList">
+  <navigator url="../customer-detail-drugstore/customer-detail-drugstore?client_id={{client_id}}" id="{{client_id}}" class="customer-body_item" catchlongpress="delSelf">
+    <view class="doctor-list_left">
+      <view class="customer-item_info">
+        <view class="customer-name">{{name}}</view>
+        <view class="customer-level_A customer-level" wx:if="{{'A' === level}}">A</view>
+        <view class="customer-level_B customer-level" wx:if="{{'B' === level}}">B</view>
+        <view class="customer-level_C customer-level" wx:if="{{'C' === level}}">C</view>
+        <view class="customer-level_D customer-level" wx:if="{{'D' === level}}">D</view>
+      </view>
+      <view class="customer-item_hospital">
+        地址：{{address}}
+      </view>
+    </view>
+    <!--<view>-->
+    <!--资料未全-->
+    <!--</view>-->
+  </navigator>
+  <view class="border-line"></view>
+</template>

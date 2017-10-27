@@ -1,0 +1,97 @@
+<view class="bg">
+  <view class="bg-head"></view>
+</view>
+<view class="work-cont">
+  <!--工作汇总-->
+  <view class="work-item">
+    <view class="work-item_tit">
+      <view class="work-item_tit_mark"></view>
+      工作汇总
+    </view>
+    <view class="border-line"></view>
+    <view class="work-item_content">
+      <navigator url="../visit-calendar/visit-calendar" class="work-tab" hover-class="none">
+        <view class="work-tab_left">
+          <image src="http://xsj.jooyum.com.cn/resource/icon_trip.svg" class="work-tab_img"></image>
+          <view class="work-tab_txt">
+            <view class="work-tab_txt-tit">行程</view>
+            <view class="work-tab_txt-p">行程说明</view>
+          </view>
+        </view>
+        <view class="arrow-right"></view>
+      </navigator>
+      <navigator url="../weekly-newspaper/weekly-newspaper" class="work-tab" hover-class="none">
+        <view class="work-tab_left">
+          <image src="http://xsj.jooyum.com.cn/resource/icon_weekly.svg" class="work-tab_img"></image>
+          <view class="work-tab_txt">
+            <view class="work-tab_txt-tit">周报</view>
+            <view class="work-tab_txt-p">周报说明</view>
+          </view>
+        </view>
+        <view class="arrow-right"></view>
+      </navigator>
+    </view>
+  </view>
+
+  <!--我的资料-->
+  <view class="work-item">
+    <view class="work-item_tit">
+      <view class="work-item_tit_mark"></view>
+      我的资料
+    </view>
+    <view class="border-line"></view>
+    <view class="work-item_content">
+      <navigator class="work-tab" hover-class="none">
+        <view class="work-tab_left">
+          <image src="http://xsj.jooyum.com.cn/resource/icon_hospital_Library.svg" class="work-tab_img"></image>
+          <view class="work-tab_txt">
+            <view class="work-tab_txt-tit">我的医院库</view>
+            <view class="work-tab_txt-p">我的医院库详细说明</view>
+          </view>
+        </view>
+        <view class="arrow-right"></view>
+      </navigator>
+      <navigator url="../prd-store/prd-store" class="work-tab" hover-class="none">
+        <view class="work-tab_left">
+          <image src="http://xsj.jooyum.com.cn/resource/icon_product_library.svg" class="work-tab_img"></image>
+          <view class="work-tab_txt">
+            <view class="work-tab_txt-tit">产品库</view>
+            <view class="work-tab_txt-p">产品库详细说明</view>
+          </view>
+        </view>
+        <view class="arrow-right"></view>
+      </navigator>
+    </view>
+  </view>
+  <!--我的助手-->
+  <view class="work-item">
+    <view class="work-item_tit">
+      <view class="work-item_tit_mark"></view>
+      我的助手
+    </view>
+    <view class="border-line"></view>
+    <view class="work-item_content">
+      <navigator class="work-tab" hover-class="none">
+        <view class="work-tab_left">
+          <image src="http://xsj.jooyum.com.cn/resource/icon_hospital_Library.svg" class="work-tab_img"></image>
+          <view class="work-tab_txt">
+            <view class="work-tab_txt-tit">附近的医院</view>
+            <view class="work-tab_txt-p">附近医院的详细说明</view>
+          </view>
+        </view>
+        <view class="arrow-right"></view>
+      </navigator>
+      <navigator class="work-tab" hover-class="none">
+        <view class="work-tab_left">
+          <image src="http://xsj.jooyum.com.cn/resource/icon_product_library.svg" class="work-tab_img"></image>
+          <view class="work-tab_txt">
+            <view class="work-tab_txt-tit">附近的药店</view>
+            <view class="work-tab_txt-p">附近药店的详细说明</view>
+          </view>
+        </view>
+        <view class="arrow-right"></view>
+      </navigator>
+    </view>
+  </view>
+
+</view>

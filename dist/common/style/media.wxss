@@ -1,0 +1,1 @@
+@media (max-width:320px){.navbar-tit,.notice-content_navigator,.trip-note,page{font-size:11px!important}.header,.list-body_tit,.modal-radio_item_tit{font-size:13px!important}.radio-item{width:16.8px;height:16.8px}.radio-item:after{width:6.72px!important;height:6.72px!important}.header-edit{font-size:11px}}

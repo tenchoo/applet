@@ -20,7 +20,7 @@ Page({
   },
   onShow: function () {
     app.getDoctorDetail(this, this.data.doctorId);
-    app.getTaskPage(this, this.data.doctorId, '1', '1');
+    app.getTaskPage(this, this.data.doctorId, '2', '1');
   },
 
   // tab栏点击
@@ -41,7 +41,7 @@ Page({
   },
   onReachBottom: function () {
     if (this.data.currentPage < this.data.pageCount) {
-      app.getTaskPage(this, this.data.doctorId, '1', parseInt(this.data.currentPage) + 1 + '');
+      app.getTaskPage(this, this.data.doctorId, '2', parseInt(this.data.currentPage) + 1 + '');
     }
   }
 

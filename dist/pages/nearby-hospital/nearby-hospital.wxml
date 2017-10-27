@@ -1,0 +1,16 @@
+<image src="http://xsj.jooyum.com.cn/resource/img_banner_hospital.png" class="header-img"></image>
+<view class="cont">
+  <block wx:for="{{hospitalPage}}">
+    <navigator url="../nearby-drugstore/nearby-drugstore?scene={{item}}" class="cont-item" id="{{item.id}}">
+      <image src="http://xsj.jooyum.com.cn/resource/icon_hospital_coordinates.svg" class="cont-item_img"></image>
+      <view class="cont-item_mid">
+        <view class="cont-item_tit">
+          <view class="item-tit">{{item.name}}</view>
+          <view class="arrow-right"></view>
+        </view>
+        <view class="item-addr">{{item.address}}</view>
+      </view>
+      <view class="cont-item_right">{{item.distance}}公里</view>
+    </navigator>
+  </block>
+</view>

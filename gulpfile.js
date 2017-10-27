@@ -68,4 +68,4 @@ gulp.task('clean', function () {
     .pipe(clean());
 });
 
-gulp.task('default', ['watch', 'style', 'js', 'img', 'carry']);
+gulp.task('default', ['watch', 'carry','img', 'style', 'js']);

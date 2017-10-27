@@ -1,0 +1,62 @@
+<import src="../../common/template/template.wxml"/>
+
+<!--筛选-->
+
+<!--任务-->
+<view class="customer">
+  <view class="border-line"></view>
+  <view class="customer-header">
+    <!--<image src="../../img/icon_flower.svg" class="customer-img"></image>-->
+    <view class="customer-header_tit">任务数：{{selectedDay.length}}项</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="customer-body">
+    <block wx:for="{{selectedDay}}" wx:key="*this">
+      <view class="border-line"></view>
+      <navigator url="../visit-detil/visit-detil?item.task_id={{item.task_id}}" class="list" id="{{item.task_id}}">
+        <view class="list-head">
+          <image src="../../img/icon_drugstore_visit.svg" wx:if="{{'1' === item.class}}" class="list-head_icon" alt=""></image>
+          <image src="../../img/icon_hospital_visit.svg" wx:if="{{'2' === item.class}}" class="list-head_icon" alt=""></image>
+        </view>
+        <view class="list-body">
+          <view class="list-body_tit" id="{{item.visit_target_id}}">{{item.name}}
+            <view class="customer-level_A customer-level" wx:if="{{'A' === level}}">A</view>
+            <view class="customer-level_B customer-level" wx:if="{{'B' === level}}">B</view>
+            <view class="customer-level_C customer-level" wx:if="{{'C' === level}}">C</view>
+            <view class="customer-level_D customer-level" wx:if="{{'D' === level}}">D</view>
+          </view>
+          <view class="list-body_other">
+            <view class="list-body_other_item">
+              <view class="list-other_item">{{item.department_name}}</view>
+              <view>{{item.duty}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="visit-finish" wx:for="{{'2' === item.status}}">已完成</view>
+        <view class="visit-will" wx:for="{{'1' === item.status}}">待拜访</view>
+        <view class="arrow-right"></view>
+      </navigator>
+    </block>
+  </view>
+</view>
+
+<!--更多功能 浮动按钮-->
+<movable-area class="float-fun">
+
+  <navigator url="../my-customer-drugstore/my-customer-drugstore" class="float-navigator {{floatBtnTapData?'float-navigator_third':''}}">
+    <view class="float-navigator_tit">查看客户药店</view>
+    <image src="../../img/btn_pharmacy.svg" class="float-img"></image>
+  </navigator>
+  <navigator url="../cloud-doctor/cloud-doctor" class="float-navigator {{floatBtnTapData?'float-navigator_second':''}}">
+    <view class="float-navigator_tit">从云医生选择</view>
+    <image src="../../img/btn_doctor.svg" class="float-img"></image>
+  </navigator>
+  <navigator url="../add-customer/add-customer" class="float-navigator {{floatBtnTapData?'float-navigator_first':''}}">
+    <view class="float-navigator_tit">创建新客户</view>
+    <image src="../../img/btn_add_client.svg" class="float-img"></image>
+  </navigator>
+
+  <movable-view bindtap="floatBtnTap" class="float-fun_btn {{floatBtnTapData?'float-fun_btn_click':''}}" direction="all" x="1000" y="1000" out-of-bounds="true"></movable-view>
+</movable-area>
+<!--蒙版-->
+<view class="masking" wx:if="{{floatBtnTapData}}"></view>

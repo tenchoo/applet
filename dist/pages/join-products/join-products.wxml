@@ -1,0 +1,25 @@
+<view class="list-cont">
+  <checkbox-group>
+    <view class="list">
+      <view class="list-left">
+        脑栓通
+        <view class="list-dec">50粒/瓶</view>
+      </view>
+      <label class="checkbox-group">
+        <view class="checkbox-item"></view>
+        <icon class="tmi-icon" type="success" size="14" color="#28b9ff"></icon>
+        <checkbox value="a" color="#50a0ff" class="radio" />
+      </label>
+    </view>
+  </checkbox-group>
+</view>
+<!--添加产品-->
+<view class="add-product">
+  <image src="http://xsj.jooyum.com.cn/resource/icon_add.svg" class="add-product_img"></image>
+  <view>添加产品</view>
+</view>
+
+<!--footer-fun-->
+<view class="footer-fun">
+  <button class="btn-sure btn-blue" hover-class="btn-blue_hover" bindtap="addCustomer">确定</button>
+</view>

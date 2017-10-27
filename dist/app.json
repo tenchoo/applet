@@ -1,0 +1,67 @@
+{
+  "debug": false,
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/work/work",
+    "pages/pro/pro",
+    "pages/signup/signup",
+    "pages/my-customer/my-customer",
+    "pages/my-customer-drugstore/my-customer-drugstore",
+    "pages/add-customer/add-customer",
+    "pages/add-customer-drugstore/add-customer-drugstore",
+    "pages/customer-detail/customer-detail",
+    "pages/customer-detail-drugstore/customer-detail-drugstore",
+    "pages/hospital-detail/hospital-detail",
+    "pages/cloud-doctor/cloud-doctor",
+    "pages/cloud-drugstore/cloud-drugstore",
+    "pages/my-visit/my-visit",
+    "pages/visit-detail/visit-detil",
+    "pages/visit-detail-edit/visit-detail-edit",
+    "pages/volume-create-visit/volume-create-visit",
+    "pages/volume-visit-customer/volume-visit-customer",
+    "pages/visit-customer/visit-customer",
+    "pages/join-products/join-products",
+    "pages/area-select/area-select",
+    "pages/achievement/achievement",
+    "pages/virstdetails/virstdetails",
+    "pages/visit-calendar/visit-calendar",
+    "pages/weekly-newspaper/weekly-newspaper",
+    "pages/prd-store/prd-store",
+    "pages/nearby-hospital/nearby-hospital",
+    "pages/nearby-drugstore/nearby-drugstore",
+    "pages/province-choose/province-choose"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#536bc8",
+    "navigationBarTitleText": "消瘦记",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/btn_home_page_default.png",
+        "selectedIconPath": "img/btn_home_page_highlight.png"
+      },
+      {
+        "pagePath": "pages/work/work",
+        "text": "工作",
+        "iconPath": "img/btn_work_default.png",
+        "selectedIconPath": "img/btn_work_highlight.png"
+      },
+      {
+        "pagePath": "pages/pro/pro",
+        "text": "我的",
+        "iconPath": "img/btn_my_default.png",
+        "selectedIconPath": "img/btn_my_highlight.png"
+      }
+    ],
+    "color": "#a6a8b6",
+    "selectedColor": "#6889fd",
+    "backgroundColor": "#fafaff"
+  }
+}

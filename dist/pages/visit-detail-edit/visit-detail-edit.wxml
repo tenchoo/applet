@@ -1,0 +1,45 @@
+<view class="header">
+  <view class="header-date">
+    <view>2017年6月17日 星期一</view>
+    <view class="arrow-right"></view>
+  </view>
+</view>
+<view class="visit-body">
+  <view class="visit-body_item">
+    <view class="visit-body_list">
+      <view class="visit-body_list_head">拜访对象</view>
+      <view class="visit-body_list_body">孙中心</view>
+    </view>
+    <view class="visit-body_list">
+      <view class="visit-body_list_head">沟通产品</view>
+      <navigator url="../join-products/join-products" class="visit-body_list_body">
+        <view class="visit-body_list_choice">请选择沟通产品</view>
+        <view class="arrow-right"></view>
+      </navigator>
+    </view>
+    <view class="visit-body_list">
+      <view class="visit-body_list_head">沟通事项</view>
+      <textarea class="visit-body_list_body" auto-height="true" maxlength="-1" placeholder="请输入沟通事项">
+      </textarea>
+    </view>
+  </view>
+  <view class="visit-body_item">
+    <view class="visit-body_tit">照片</view>
+    <view class="border-line"></view>
+    <view class="img-cont">
+      <block wx:for="{{photoLists}}" wx:key="*this">
+        <view class="img-cont_item" data-index="{{index}}" bindtap="previewPhoto" catchlongpress="delSelfImg">
+          <image src="{{item}}" data-src="{{item}}" class="img-cont_item_image"></image>
+        </view>
+      </block>
+      <view class="img-cont_item" bindtap="choosePhoto">
+        <image src="http://xsj.jooyum.com.cn/resource/btn_add_photos.svg" class="img-cont_item_image"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--footer-fun-->
+<view class="footer-fun">
+  <button class="btn-sure btn-blue" hover-class="btn-blue_hover" bindtap="addCustomer">保存</button>
+</view>
