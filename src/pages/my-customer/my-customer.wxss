@@ -1,0 +1,124 @@
+page{
+  padding-top:172rpx;
+}
+.screen{
+  position:fixed;
+  top:100rpx;
+  left:0;
+  width:100%;
+  z-index:100;
+}
+/*客户列表*/
+
+.star-customer{
+  margin-bottom:16rpx;
+}
+.customer-header{
+  display:flex;
+  align-items:center;
+  padding: 0 12rpx;
+  background:#fafaff;
+  height:76rpx;
+  color:#83889a;
+}
+.customer-img{
+  width:38rpx;
+  height:38rpx;
+}
+.customer-header_tit{
+  margin:0 16rpx;
+}
+.customer-body_item{
+  display:flex;
+  justify-content: space-between;
+  padding-left:66rpx;
+  padding-right:20rpx;
+  background:#fff;
+}
+.customer-item_info,
+.customer-item_hospital{
+  display:flex;
+  align-items: center;
+}
+.customer-item_info{
+  padding:20rpx 0 11rpx;
+  color:#83889a;
+}
+.customer-item_hospital{
+  padding:11rpx 0 26rpx;
+  color:#a6a8b6;
+}
+.customer-name{
+  color:#333;
+  font-size:28rpx;
+}
+.customer-level{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:0 12rpx 0 14rpx;
+  width:28rpx;
+  height:28rpx;
+  color:#fff;
+  border-radius:4rpx;
+}
+.customer-level_A{
+  background:#ff6464;
+}
+.customer-level_B{
+  background:#ff9426;
+}
+.customer-level_C{
+  background:#48b0f7;
+}
+.customer-level_D{
+  background:#10cfbd;
+}
+.customer-position{
+  margin:0 16rpx 0 24rpx;
+}
+.warnning{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:12rpx;
+  padding:0 8rpx;
+  height:36rpx;
+  color:#ffb74e;
+  border:1px solid #ffb74e;
+  border-radius:3px;
+}
+
+.checkbox-group{
+  align-self:center;
+}
+
+/*底部按钮*/
+.footer-fun{
+  padding: 16rpx 40rpx;
+  height:112rpx;
+}
+.btn-sure{
+  width:100%;
+  font-size:30rpx;
+  line-height:2.8;
+}
+/*浮动按钮*/
+.float-fun_btn_click:after{
+  transform:translate(-50%,-50%) rotate(45deg);
+}
+.float-fun_btn_click:before{
+  transform:translate(-50%,-50%) rotate(-45deg);
+}
+.default-page{
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  text-align: center;
+  width:100%;
+}
+.default-page_img{
+  width:230rpx;
+  height:240rpx;
+}

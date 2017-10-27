@@ -1,0 +1,229 @@
+.head{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:82rpx;
+  background:#536bc8;
+  color:#fff;
+  z-index:999999;
+}
+.head-date{
+  font-size:28rpx;
+}
+.arrow-down{
+  margin-bottom:6rpx;
+  border-top-color:#ddd;
+  border-right-color:#ddd;
+}
+.arrow-down.arrow-up{
+  transform:rotate(-45deg);
+  margin-bottom:-3px;
+}
+
+.calendar-week{
+  position:fixed;
+  top:82rpx;
+  left:0;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width:100%;
+  height:66rpx;
+  background:#536bc8;
+  color:#fff;
+  z-index:10;
+}
+.calendar-week_item{
+  flex:1;
+  text-align: center;
+}
+.calendar-day{
+  box-sizing:border-box;
+  width:100%;
+  margin-top:148rpx;
+}
+.calendar-day_item{
+  position:relative;
+  box-sizing:border-box;
+  display:inline-block;
+  padding:6rpx 10rpx;
+  width:14.28%;
+  height:234rpx;
+  color:#000;
+  background: #fff;
+  border-right:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.calendar-day_item:nth-of-type(7n){
+  border-right:0 none;
+}
+.shade{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:100;
+}
+.calendar-day_item.prev-month,.calendar-day_item.next-month{
+  background:#fafaff;
+  color:#999;
+}
+.calendar-day_item_head{
+  display:flex;
+  justify-content: space-between;
+  margin-bottom:20rpx;
+}
+.calendar-task_num{
+  width:34rpx;
+  height:34rpx;
+  text-align:center;
+  line-height:34rpx;
+  background:#6889fd;
+  color:#fff;
+  font-family: "Microsoft YaHei UI";
+  border-radius:50%;
+}
+.calendar-day_item-list{
+  margin-bottom:20rpx;
+  width:100%;
+  white-space: nowrap;
+  overflow: hidden;
+  color:#6889fd;
+  /*text-overflow: ellipsis;*/
+}
+.ellec{
+  margin-top:-20rpx;
+  font-size:28rpx;
+  color:#999;
+}
+.calendar-task_unfinished{
+  color:#fc9497;
+}
+
+/*模态框*/
+.modal{
+  z-index:999;
+}
+.modal-cont{
+  position:relative;
+}
+.modal-head-img{
+  width:100%;
+  height:246rpx;
+}
+.modal-data{
+  width:100%;
+  height:96rpx;
+  text-align: center;
+  line-height:96rpx;
+  color:#6889fd;
+  font-size:32rpx;
+}
+.modal-container{
+  height:570rpx;
+  overflow: auto;
+}
+.modal-content{
+  box-sizing: border-box;
+  width:100%;
+  padding:22rpx 14rpx 22rpx 32rpx;
+}
+.modal-cont-tit{
+  display:flex;
+  justify-content: flex-start;
+  font-size:26rpx;
+  color:#000;
+}
+.modal-finished{
+  color:#28b9ff;
+}
+.modal-unfinished{
+  color:#fb797d;
+}
+.modal-close{
+  position:absolute;
+  bottom:-22rpx;
+  left:50%;
+  transform:translate(-50%,100%);
+  width:72rpx;
+  height:72rpx;
+}
+/*日期选择*/
+.picker-bg,.picker-outer{
+  position:fixed;
+  box-sizing: border-box;
+  padding-top:82rpx;
+  width:100%;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:rgba(0,0,0,0.8);
+  z-index:99999;
+}
+.picker-outer{
+  transform:translateY(-100%);
+  transition:all 300ms;
+  background:transparent;
+}
+.picker{
+  box-sizing: border-box;
+  width:100%;
+  height:800rpx;
+  background:#fff;
+  color:#000;
+  font-size:15px;
+}
+
+.picker-outer_move{
+  transform:translateY(0);
+}
+.select-picker{
+  height:74rpx;
+}
+.picker-item{
+  line-height:74rpx;
+  text-align: center;
+}
+.picker-fun{
+  display:flex;
+  justify-content: space-between;
+  box-sizing:border-box;
+  padding:10rpx;
+  width:100%;
+  background:#fff;
+}
+.picker-fun_btn{
+  flex:1;
+  height:60rpx;
+  line-height:60rpx;
+  border-radius:4px;
+  text-align:center;
+  font-size:16px;
+  color:#fff;
+}
+.btn-cancel{
+  background:#a6a8b6;
+}
+.btn-sure{
+  background:#6889fd;
+}
+
+@media(max-width:320px){
+  .head-date,.ellec{
+    font-size:14px;
+  }
+  .arrow-down{
+    margin-bottom:3px;
+  }
+  .modal-cont-tit{
+    font-size:13px;
+  }
+}

@@ -1,0 +1,44 @@
+@import '../visit-detail/visit-detil.wxss';
+
+.visit-body_list{
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 26rpx;
+  height:92rpx;
+  border-bottom:1px solid #ddd;
+}
+.visit-body_list:last-of-type{
+  border-bottom:0 none;
+}
+.visit-body_list_left{
+  display:flex;
+  align-items: center;
+  font-size:24rpx;
+}
+@media(max-width:320px){
+  .visit-body_list_left{
+    font-size:12px;
+  }
+  .visit-body_list_dec{
+    font-size:11px;
+  }
+}
+.visit-list_left_img,
+.visit-list_right_img{
+  margin-right:18rpx;
+  width:20px;
+  height:20px;
+}
+.visit-list_right_img{
+  margin-right:0;
+}
+.arrow-right:after{
+  border-top-color:#ddd;
+  border-right-color:#ddd;
+}
+.visit-body_list_dec{
+  margin-left:20rpx;
+  color:#a6a8b6;
+  font-size:22rpx;
+}

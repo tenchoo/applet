@@ -1,0 +1,142 @@
+.screen{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+}
+
+.th{
+  display:flex;
+  align-items: center;
+  height:82rpx;
+  background:#fff;
+  margin-top:90rpx;
+}
+.th-date{
+  margin-left:36rpx;
+  width:193rpx;
+}
+.th-txt{
+  flex:1;
+  text-align: center;
+}
+.td{
+  display:flex;
+  background:#fff;
+}
+.td-date{
+  display:flex;
+  padding:27rpx 9rpx;
+  width:200rpx;
+  color:#000;
+}
+.td-cont{
+  flex:1;
+  padding:12rpx 25rpx;
+  border-left:1px solid #ddd;
+}
+.td-cont_item{
+  padding:25rpx 0;
+}
+.line-mark{
+  margin-right:18rpx;
+  height:64rpx;
+  width:2px;
+  background:#ffb74e;
+}
+.td-date_date{
+  flex:1;
+  text-align: center;
+}
+.td-cont_item_head{
+  display:flex;
+  color:#000;
+  font-size:12px;
+}
+.finished,.unfinished{
+  width:130rpx;
+}
+.td-cont_name{
+  width:80rpx;
+}
+.td-cont_depart{
+  flex:1;
+}
+.screen-container{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  display:flex;
+  background:#eee;
+  z-index:2;
+  padding-top:92rpx;
+}
+
+.screen-left,.screen-right,.screen-full{
+  flex:1;
+  position:relative;
+}
+.mark{
+  width:28rpx;
+  height:28rpx;
+  background:#fff;
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(45deg);
+  border-left:1px solid #ddd;
+  border-top:1px solid #ddd;
+}
+.left-mark{
+  background:#fafaff;
+}
+.screen-left_item,.screen-right_item,.screen-full_item{
+  height:72rpx;
+  line-height:72rpx;
+  width:100%;
+  text-align: center;
+  font-size:26rpx;
+}
+.screen-left_item:nth-of-type(2),.screen-right_item:nth-of-type(1),.screen-full_item:nth-of-type(2){
+  border-top:1px solid #ddd;
+}
+.screen-left_item{
+  border-bottom:1px solid #ddd;
+  background:#fafaff;
+}
+.screen-right_item{
+  background:#fff;
+  border-left:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+}
+.screen-full_item{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  text-align:left;
+  padding-left:60rpx;
+}
+.left-on{
+  background:#fff;
+  color:#28b9ff;
+}
+.right-on,.screen-full_on{
+  color:#28b9ff;
+}
+
+.mark-right{
+  left:75%;
+}
+@media(max-width:320px){
+  .finished,.unfinished{
+    width:62px;
+  }
+  .td-cont_name{
+    width:40px;
+  }
+  .screen-left_item,.screen-right_item{
+    font-size:13px;
+  }
+}

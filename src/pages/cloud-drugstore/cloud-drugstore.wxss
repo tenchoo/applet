@@ -1,0 +1,19 @@
+@import '../cloud-drugstore/cloud-drugstore.wxss';
+.list-body_tit{
+  display:flex;
+  justify-content: space-between;
+}
+.list-body_tit_right,.list-body_tit_right_btn{
+  display:flex;
+  align-items: center;
+}
+.list-body_tit_right_btn{
+  color:#50a0ff;
+}
+.list-body_tit_right{
+  color:#a6a8b6;
+}
+.list-body_tit_img{
+  width:38rpx;
+  height:38rpx;
+}

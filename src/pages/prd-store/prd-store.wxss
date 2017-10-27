@@ -1,0 +1,72 @@
+.head-img{
+  margin-bottom:20rpx;
+  width:100%;
+  height:266rpx;
+}
+.container{
+  padding-bottom:110rpx;
+}
+.th{
+  display:flex;
+  align-items: center;
+  width:100%;
+  height:92rpx;
+  background:#fafaff;
+  font-size:26rpx;
+}
+.th-prd_name,.th-prd_spec{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.th-prd_name{
+  flex:3;
+  margin-left:40rpx;
+}
+.th-prd_spec{
+  flex:2;
+}
+.th-prd_del{
+  width:84rpx;
+}
+.th.td{
+  background:#fff;
+}
+.th-prd_name.td-prd_name{
+  color:#000;
+}
+.icon-del{
+  width:60rpx;
+  height:60rpx;
+}
+.btn-add{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border:1px solid #ddd;
+  background:#fff;
+  width:220rpx;
+  height:72rpx;
+  border-radius:42rpx;
+  font-size:28rpx;
+  color:#50a0ff;
+}
+.icon-btn_add{
+  width:36rpx;
+  height:36rpx;
+}
+/*新增按钮*/
+.btn-add{
+  margin:30rpx auto;
+  width:254rpx;
+  height:84rpx;
+}
+@media(max-width:320px){
+  .th{
+    font-size:13px;
+  }
+  .btn-add{
+    font-size:14px;
+  }
+
+}

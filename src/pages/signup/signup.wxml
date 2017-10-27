@@ -1,0 +1,49 @@
+<view class="logo">
+  <image src="../../img/img_logo_xiaoshouji.png" class="img-logo"></image>
+</view>
+<view class="tip">为了更好的为您提供服务，请完善以下资料（*为必填项）：</view>
+<view class="form-cont">
+  <!--公司名-->
+  <view class="form-item">
+    <image class="form-item_icon" src="../../img/icon_corporate_name.svg"></image>
+    <label for="companyName" class="form-item_label">*公司名称</label>
+    <input value="{{companyName}}" bindblur="blurCompanyName" id="companyName" class="form-item_input" placeholder="请输入您所在公司名称" focus="true" confirm-type="next" />
+  </view>
+  <!--手机号-->
+  <view class="form-item">
+    <image class="form-item_icon" src="../../img/icon_contact_number.svg"></image>
+    <label for="tel" class="form-item_label">*联系电话</label>
+    <input value="{{tel}}" bindblur="blurTel" id="tel" class="form-item_input" type="number" placeholder="请输入手机号" maxlength="11" confirm-type="next" />
+    <button class="btn-captcha" size="mini" bindtap="getCaptcha" disabled="{{btnCaptchaState}}">{{btnCaptcha}}</button>
+  </view>
+  <!--验证码-->
+  <view class="form-item">
+    <image class="form-item_icon" src="../../img/icon_verification_code.svg"></image>
+    <label for="captcha" class="form-item_label">*验证码<view class="hidden">码</view></label>
+    <input value="{{captcha}}" bindblur="blurCaptcha" id="captcha" class="form-item_input" type="number" placeholder="请输入获取到的验证码" confirm-type="next" maxlength="4" />
+  </view>
+  <!--联系邮箱-->
+  <view class="form-item">
+    <image class="form-item_icon" src="../../img/icon_contact_mailbox.svg"></image>
+    <label for="email" class="form-item_label"><view class="hidden">*</view>联系邮箱</label>
+    <input value="{{email}}" bindblur="blurEmail" id="email" class="form-item_input" placeholder="请输入您的常用邮箱" />
+  </view>
+</view>
+<view class="form-cont">
+  <view class="form-item">
+   *请选择您的负责模块
+  </view>
+  <view class="border-line"></view>
+    <checkbox-group class="checkbox-group" bindchange="checkboxChange">
+      <label><checkbox value="1" color="#a8b9ff" /> 处方</label>
+      <label><checkbox value="2" color="#a8b9ff" /> OTC</label>
+    </checkbox-group>
+</view>
+<view class="form-cont">
+  <!--邀请码-->
+  <view class="form-item">
+    <label for="inviteCode" class="form-item_label">*邀请码<view class="hidden">码</view></label>
+    <input value="{{inviteCode}}" bindblur="blurInviteCode" id="inviteCode" class="form-item_input" type="number" placeholder="请输入邀请码" />
+  </view>
+</view>
+<button bindtap="submit" class="btn-blue" hover-class="btn-blue_hover">确定</button>

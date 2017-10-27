@@ -1,0 +1,36 @@
+<view class="header">
+  <view class="header-date">
+    <view>2017年6月17日 星期一</view>
+    <view class="arrow-right"></view>
+  </view>
+</view>
+<view class="visit-body">
+  <view class="visit-body_item">
+    <navigator url="../volume-visit-customer/volume-visit-customer">
+    <view class="visit-body_list">
+        <view class="visit-body_list_left">
+          <image src="http://xsj.jooyum.com.cn/resource/icon_visiting_object.svg" class="visit-list_left_img"></image>
+          拜访对象
+        </view>
+        <view class="arrow-right"></view>
+    </view>
+      <view class="border-line"></view>
+    </navigator>
+    <block>
+      <view class="visit-body_list">
+        <view class="visit-body_list_left">
+          张亮
+          <view class="visit-body_list_dec">妇产科</view>
+          <view class="visit-body_list_dec">主任医师</view>
+          <view class="visit-body_list_dec">副教授</view>
+        </view>
+        <image src="http://xsj.jooyum.com.cn/resource/icon_delete.svg" class="visit-list_right_img"></image>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!--footer-fun-->
+<view class="footer-fun">
+  <button class="btn-sure btn-blue" hover-class="btn-blue_hover" bindtap="createVisit">创建</button>
+</view>

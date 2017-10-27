@@ -1,0 +1,45 @@
+<import src="../../common/template/template.wxml"/>
+<!--筛选-->
+<template is="screen" data="{{screenData}}"></template>
+
+<view class="th">
+  <view class="th-date">日期</view>
+  <view class="th-txt">拜访事项</view>
+</view>
+<view class="td">
+  <view class="td-date">
+    <view class="line-mark"></view>
+    <view class="td-date_date">
+      <view>星期三</view>
+      <view>（12月30日）</view>
+    </view>
+  </view>
+  <view class="td-cont">
+    <view class="td-cont_item">
+      <view class="td-cont_item_head">
+        <view>1.</view>
+        <view class="finished">【已完成】</view>
+        <view class="td-cont_name">孙中心</view>
+        <view class="td-cont_depart">上海第一人民医院长寿路德康支医院</view>
+      </view>
+      <view>
+        小结：阿斯顿发射点法法啊沙发上发发发发发士大夫家里发生紧急叫阿三的vv你哈为解放军放假啊是放假啊时间覅附件
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--筛选弹出-->
+<view class="screen-container" wx:if="{{screenBool}}">
+  <view class="screen-left" wx:if="{{dateBool}}">
+    <view class="mark {{yearIndex==0?'':'left-mark'}}"></view>
+    <view class="screen-left_item {{yearIndex==index?'left-on':''}}" wx:for="{{years}}" wx:key="*this" data-index="{{index}}" catchtap="selectYear">{{item}}年</view>
+  </view>
+  <view class="screen-right" wx:if="{{dateBool}}">
+    <view class="screen-right_item {{monthIndex==index?'right-on':''}}" wx:for="{{months}}" wx:key="*this" data-index="{{index}}" catchtap="selectMonth">{{item}}月</view>
+  </view>
+  <view class="screen-full" wx:if="{{weekBool}}">
+    <view class="mark mark-right"></view>
+    <view class="screen-full_item {{weekIndex==index?'screen-full_on':''}}" wx:for="{{weeks}}" data-index="{{index}}" catchtap="getWeek">第{{index+1}}周 ({{item}})</view>
+  </view>
+</view>

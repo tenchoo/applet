@@ -1,0 +1,91 @@
+<import src="../../common/template/template.wxml"/>
+
+<!--搜索框-->
+<template is="searchGroup" data="{{placeHolder}}"></template>
+<!--筛选-->
+<!--<view class="border-line"></view>-->
+<view class="screen">
+  <view class="screen-item">{{screenItem_1}}<view class="screen-arrow-down"></view></view>
+  <view class="screen-item">{{screenItem_2}}<view class="screen-arrow-down"></view></view>
+  <view class="screen-item">{{screenItem_3}}<view class="screen-arrow-down"></view></view>
+</view>
+<checkbox-group bindchange="">
+  <!--星标客户-->
+  <view class="star-customer" wx:if="true">
+    <view class="border-line"></view>
+    <view class="customer-header">
+      <image src="../../img/icon_stars.svg" class="customer-img"></image>
+      <view class="customer-header_tit">星标客户</view>
+      <view>共{{starDoctorList.length}}位客户</view>
+    </view>
+    <view class="border-line"></view>
+    <view class="customer-body">
+      <block>
+        <navigator url="../volume-create-visit/volume-create-visit" id="{{doctor_id}}" class="customer-body_item" catchlongpress="delSelf">
+          <view class="doctor-list_left">
+            <view class="customer-item_info">
+              <view class="customer-name">{{name}}</view>
+              <view class="customer-level_A customer-level" wx:if="{{'A' === level}}">A</view>
+              <view class="customer-level_B customer-level" wx:if="{{'B' === level}}">B</view>
+              <view class="customer-level_C customer-level" wx:if="{{'C' === level}}">C</view>
+              <view class="customer-level_D customer-level" wx:if="{{'D' === level}}">D</view>
+              <view>{{department_name}}</view>
+              <view class="customer-position">{{job}}</view>
+              <view>{{duty}}</view>
+            </view>
+            <view class="customer-item_hospital">
+              所在医院：{{client_name}}
+            </view>
+          </view>
+          <label class="checkbox-group">
+            <view class="checkbox-item"></view>
+            <icon class="tmi-icon" type="success" size="14" color="#28b9ff"></icon>
+            <checkbox value="a" color="#50a0ff" class="radio" />
+          </label>
+        </navigator>
+        <view class="border-line"></view>
+      </block>
+    </view>
+  </view>
+  <!--客户-->
+  <view class="customer">
+    <view class="border-line"></view>
+    <view class="customer-header">
+      <image src="../../img/icon_flower.svg" class="customer-img"></image>
+      <view class="customer-header_tit">共{{dataCount}}位客户</view>
+    </view>
+    <view class="border-line"></view>
+    <view class="customer-body">
+      <block>
+        <navigator url="../volume-create-visit/volume-create-visit" id="{{doctor_id}}" class="customer-body_item" catchlongpress="delSelf">
+          <view class="doctor-list_left">
+            <view class="customer-item_info">
+              <view class="customer-name">{{name}}</view>
+              <view class="customer-level_A customer-level" wx:if="{{'A' === level}}">A</view>
+              <view class="customer-level_B customer-level" wx:if="{{'B' === level}}">B</view>
+              <view class="customer-level_C customer-level" wx:if="{{'C' === level}}">C</view>
+              <view class="customer-level_D customer-level" wx:if="{{'D' === level}}">D</view>
+              <view>{{department_name}}</view>
+              <view class="customer-position">{{job}}</view>
+              <view>{{duty}}</view>
+            </view>
+            <view class="customer-item_hospital">
+              所在医院：{{client_name}}
+            </view>
+          </view>
+          <label class="checkbox-group">
+            <view class="checkbox-item"></view>
+            <icon class="tmi-icon" type="success" size="14" color="#28b9ff"></icon>
+            <checkbox value="a" color="#50a0ff" class="radio" />
+          </label>
+        </navigator>
+        <view class="border-line"></view>
+      </block>
+    </view>
+  </view>
+</checkbox-group>
+
+<!--footer-fun-->
+<view class="footer-fun">
+  <button class="btn-sure btn-blue" hover-class="btn-blue_hover" bindtap="addCustomer">确定</button>
+</view>

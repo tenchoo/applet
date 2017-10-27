@@ -1,0 +1,90 @@
+<view class="tab-cont">
+  <view class="spacer"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">药店名称</view>
+    <view class="basic-info_body">{{client_name}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">连锁品牌</view>
+    <view class="basic-info_body">{{client_name}}</view>
+    <view class="arrow-right"></view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">是否医保</view>
+    <view class="basic-info_body">{{department_name}}</view>
+    <view class="arrow-right"></view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">客户等级</view>
+    <view class="basic-info_body">{{duty}}</view>
+    <view class="arrow-right"></view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">地址<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{job}}</view>
+    <view class="arrow-right"></view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">备注<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{remark}}</view>
+  </view>
+</view>
+<!--footer-fun-->
+<view class="footer-fun">
+  <button class="btn-sure btn-blue" hover-class="btn-blue_hover" bindtap="addCustomer">确定</button>
+</view>
+<!--模态框-->
+<view class="modal">
+  <view class="modal-cont">
+    <view class="modal-cont_header">请选择客户等级</view>
+    <view class="modal-cont_body">
+      <view class="modal-radio_group">
+        <radio-group bindchange="radioChange">
+          <label class="modal-radio_item">
+            <view class="modal-radio_item_tit">A级<view class="normal-txt">（重要）</view></view>
+            <view class="radio-item {{'a' === radioData?'on':''}}">
+              <radio value="a" color="#50a0ff" class="radio"/>
+            </view>
+          </label>
+          <view class="border-line"></view>
+          <label class="modal-radio_item">
+            <view class="modal-radio_item_tit">B级<view class="normal-txt">（较重要）</view></view>
+            <view class="radio-item {{'b' === radioData?'on':''}}">
+              <radio value="b" color="#50a0ff" class="radio"/>
+            </view>
+          </label>
+          <view class="border-line"></view>
+          <label class="modal-radio_item">
+          <view class="modal-radio_item_tit">C级<view class="normal-txt">（一般）</view></view>
+          <view class="radio-item {{'c' === radioData?'on':''}}">
+            <radio value="c" color="#50a0ff" class="radio"/>
+          </view>
+        </label>
+          <view class="border-line"></view>
+          <label class="modal-radio_item">
+            <view class="modal-radio_item_tit">D级<view class="normal-txt">（不重要）</view></view>
+            <view class="radio-item {{'d' === radioData?'on':''}}">
+              <radio value="d" color="#50a0ff" class="radio"/>
+            </view>
+          </label>
+          <view class="border-line"></view>
+        </radio-group>
+      </view>
+      <view class="modal-tip">
+        <view>提示：</view>
+        <view>药店等级可根据门店面积及地理位置来确定</view>
+        <view>面积越大，地理位置越好重要度也越高</view>
+      </view>
+    </view>
+    <view class="border-line"></view>
+    <view class="modal-cont-footer">
+      <view class="modal-btn">取消</view>
+      <view class="modal-btn modal-btn_sure">确定</view>
+    </view>
+  </view>
+</view>

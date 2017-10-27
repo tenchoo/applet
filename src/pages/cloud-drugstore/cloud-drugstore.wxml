@@ -1,0 +1,39 @@
+<import src="../../common/template/template.wxml"/>
+
+<!--搜索框-->
+<template is="searchGroup" data="{{placeHolder}}"></template>
+<!--筛选-->
+<!--<view class="border-line"></view>-->
+<template is="screen" data="{{screenData}}"></template>
+<block wx:for="{{pharmacyPage}}" wx:key="*this">
+  <navigator class="list" id="{{item.id}}" url="../customer-detail-drugstore/customer-detail-drugstore?id={{item.id}}">
+    <view class="list-head">
+      <image src="../../img/icon_pharmacy.svg" class="list-head_icon" alt=""></image>
+    </view>
+    <view class="list-body">
+      <view class="list-body_tit">
+        <view>{{item.name}}</view>
+        <!--<view class="list-body_tit_right_btn">-->
+          <!--<image src="http://xsj.jooyum.com.cn/resource/icon_add_to_blue.svg" class="list-body_tit_img"></image>-->
+          <!--添加客户-->
+        <!--</view>-->
+        <!--<view class="list-body_tit_right">-->
+          <!--<image src="http://xsj.jooyum.com.cn/resource/icon_been_added.svg" class="list-body_tit_img"></image>-->
+          <!--我的客户-->
+        <!--</view>-->
+      </view>
+      <view class="list-body_other">
+        <view class="list-body_other_item">
+          <view>连锁品牌：</view>
+          <view class="list-body_other_item_content">{{item.brand}}</view>
+        </view>
+        <view class="list-body_other_item">
+          <view>地<view class="hidden">占位</view>址：</view>
+          <view class="list-body_other_item_content">{{item.address}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="arrow-right"></view>
+  </navigator>
+  <view class="border-line"></view>
+</block>

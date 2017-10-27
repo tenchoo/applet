@@ -1,0 +1,62 @@
+<import src="../../common/template/template.wxml"/>
+
+<!--搜索框-->
+<template is="searchGroup" data="{{placeHolder}}"></template>
+<!--筛选-->
+<!--<view class="border-line"></view>-->
+<view class="screen">
+  <view class="screen-item">{{screenItem_1}}<view class="screen-arrow-down"></view></view>
+  <view class="screen-item">{{screenItem_2}}<view class="screen-arrow-down"></view></view>
+  <view class="screen-item">{{screenItem_3}}<view class="screen-arrow-down"></view></view>
+</view>
+<!--星标客户-->
+<view class="star-customer" wx:if="{{0 < starClientList.length}}">
+  <view class="border-line"></view>
+  <view class="customer-header">
+    <image src="../../img/icon_stars.svg" class="customer-img"></image>
+    <view class="customer-header_tit">星标客户</view>
+    <view>共{{starDoctorList.length}}位客户</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="customer-body">
+    <block wx:for="{{starClientList}}">
+      <template is="clientList" data="{{...item}}"></template>
+    </block>
+  </view>
+</view>
+<!--客户-->
+<view class="customer" wx:if="{{!defaultBool}}">
+  <view class="border-line"></view>
+  <view class="customer-header">
+    <image src="../../img/icon_flower.svg" class="customer-img"></image>
+    <view class="customer-header_tit">共{{dataCount}}位客户</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="customer-body">
+    <block wx:for="{{clientPage}}">
+      <template is="clientList" data="{{...item}}"></template>
+    </block>
+  </view>
+</view>
+<!--缺省页-->
+<view wx:if="{{defaultBool}}" class="default-page">
+  <image src="http://xsj.jooyum.com.cn/resource/img_no_content.png" class="default-page_img"></image>
+  <view>您还没有客户哟~</view>
+  <view>点击下方添加客户按钮，创建您的客户</view>
+</view>
+<!--更多功能 浮动按钮-->
+<movable-area class="float-fun">
+
+  <navigator url="../cloud-drugstore/cloud-drugstore" class="float-navigator {{floatBtnTapData?'float-navigator_second':''}}">
+    <view class="float-navigator_tit {{floatBtnTapData?'float-navigator_tit_move':''}}">从云药店选择</view>
+    <image src="../../img/btn_doctor.svg" class="float-img"></image>
+  </navigator>
+  <navigator url="../add-customer-drugstore/add-customer-drugstore" class="float-navigator {{floatBtnTapData?'float-navigator_first':''}}">
+    <view class="float-navigator_tit {{floatBtnTapData?'float-navigator_tit_move':''}}">创建新客户</view>
+    <image src="../../img/btn_add_client.svg" class="float-img"></image>
+  </navigator>
+
+  <movable-view bindtap="floatBtnTap" class="float-fun_btn {{floatBtnTapData?'float-fun_btn_click':''}}" direction="all" x="1000" y="1000" out-of-bounds="true"></movable-view>
+</movable-area>
+<!--蒙版-->
+<view class="masking" wx:if="{{floatBtnTapData}}"></view>

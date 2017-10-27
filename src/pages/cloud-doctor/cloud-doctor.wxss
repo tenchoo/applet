@@ -1,0 +1,4 @@
+.arrow-right:after{
+  border-top-color:#ddd;
+  border-right-color:#ddd;
+}

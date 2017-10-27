@@ -1,0 +1,26 @@
+@import '../visit-detail/visit-detil.wxss';
+
+.visit-body_list_body{
+  display:flex;
+  justify-content: space-between;
+}
+.arrow-right:after{
+  border-top-color:#a6a8b6;
+  border-right-color:#a6a8b6;
+}
+.visit-body_list_choice{
+  color:#83889a;
+}
+/*底部按钮*/
+.footer-fun{
+  padding: 16rpx 40rpx;
+  height:112rpx;
+}
+.btn-sure{
+  width:100%;
+  font-size:30rpx;
+  line-height:2.8;
+}
+.visit-body{
+  padding-bottom:112rpx;
+}

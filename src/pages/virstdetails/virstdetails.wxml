@@ -1,0 +1,61 @@
+<!--pages/virstdetails/virstdetails.wxml-->
+<view class="base-virst-details">
+    <view class="top-background">
+
+    </view>
+
+    <view class="pad">
+        <view class="virst-data">6月17日</view>
+        <view class="virst-data-year">- 2017 -</view>
+        <view class="every-details">
+        <view >
+        <view class = "padding" >拜访对象</view>
+        <view class="virst">
+            <view  class="">孙中山</view>
+            <view class="border-line"></view>
+        </view>
+        </view>
+
+        <view >
+        <view class = "padding" >沟通产品</view>
+        <view class="virst">
+            <view  class="">孙中山</view>
+            <view class="border-line"></view>
+        </view>
+        </view>
+
+        <view >
+            <view class = "padding" >沟通事项</view>
+            <view class="virst">
+                <view  class="virst">阿萨大大</view>
+                <view class="border-line"></view>
+            </view>
+        </view>
+
+    </view>
+        <view class="every-details">
+            <view >
+                <view class = "padding" >照片</view>
+                <view class="border-line"></view>
+            </view>
+
+            <view class="photo-all">
+                <view class="photo-sing">
+                    <image class="picture" src ="../../img/icon_my_client.svg"></image>
+                </view>
+                <view class="photo-sing">
+                    <image class="picture" src ="../../img/icon_my_client.svg"></image>
+                </view>
+                <view class="photo-sing">
+                    <image class="picture" src ="../../img/icon_my_client.svg"></image>
+                </view>
+                <view class="photo-sing">
+                    <image class="picture" src ="../../img/icon_my_client.svg"></image>
+                </view>
+
+            </view>
+
+
+        </view>
+    </view>
+</view>

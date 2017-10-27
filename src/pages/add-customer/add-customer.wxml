@@ -1,0 +1,46 @@
+<view class="tab-cont">
+  <view class="spacer"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">医生姓名</view>
+    <view class="basic-info_body">{{client_name}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">所属医院</view>
+    <view class="basic-info_body">{{client_name}}</view>
+    <view class="arrow-right"></view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">科室<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{department_name}}</view>
+    <view class="arrow-right"></view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">职位<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{duty}}</view>
+    <view class="arrow-right"></view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">职称<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{job}}</view>
+    <view class="arrow-right"></view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">客户等级</view>
+    <view class="basic-info_body">{{level}}</view>
+    <view class="arrow-right"></view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">备注<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{remark}}</view>
+  </view>
+</view>
+<!--footer-fun-->
+<view class="footer-fun">
+  <button class="btn-sure btn-blue" hover-class="btn-blue_hover" bindtap="addCustomer">确定</button>
+</view>

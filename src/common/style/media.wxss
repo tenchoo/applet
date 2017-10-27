@@ -1,0 +1,24 @@
+@media(max-width: 320px){
+  /*小字体*/
+  page,.navbar-tit,.notice-content_navigator,.trip-note{
+    font-size: 11px !important;
+  }
+  .list-body_tit,.header{
+    font-size:13px!important;
+  }
+  .modal-radio_item_tit{
+    font-size:13px!important;
+  }
+  .radio-item{
+    width:16.8px;
+    height:16.8px;
+  }
+  .radio-item:after{
+    width:6.72px!important;
+    height:6.72px!important;
+  }
+  /*拜访详情*/
+  .header-edit{
+    font-size:11px;
+  }
+}

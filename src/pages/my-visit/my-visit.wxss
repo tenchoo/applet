@@ -1,0 +1,23 @@
+@import '../my-customer/my-customer.wxss';
+@import '../cloud-drugstore/cloud-drugstore.wxss';
+.visit-finish,.visit-will{
+  margin-right:20rpx;
+  padding:2rpx 3rpx;
+  background:#fff;
+  border-radius:2px;
+}
+.visit-finish{
+  color:#a6a8b6;
+  border:1px solid #a6a8b6;
+}
+.visit-will{
+  color:#ffb74e;
+  border:1px solid #ffb74e;
+}
+.arrow-right:after{
+  border-top-color:#ddd;
+  border-right-color:#ddd;
+}
+.list-other_item{
+  margin-right:26rpx;
+}

@@ -1,0 +1,203 @@
+
+<view class="header">
+  <view class="header-left">
+    <view class="header-customer_name">{{name}}</view>
+    <view>{{department_name}}</view>
+    <view class="header-customer_position">{{job}}</view>
+    <view>{{duty}}</view>
+  </view>
+  <image src="../../img/icon_sign_stars_default.svg" bindtap="toggleStar" wx:if="{{'0' === star_mark}}" class="header-customer_star"></image>
+  <image src="../../img/icon_sign_stars_pressed.svg" bindtap="toggleStar" wx:if="{{'1' === star_mark}}" class="header-customer_star"></image>
+</view>
+<view class="border-line"></view>
+<!--tab切换-->
+<view class="tabs">
+  <block  wx:for="{{tabs}}" wx:key="*this">
+    <view id="{{index}}" class="tabs-item {{activeIndex == index ? 'tabs-item_on' : ''}}" bindtap="tabClick">{{item}}</view>
+  </block>
+</view>
+<view class="border-line"></view>
+<!--拜访记录-->
+<view hidden="{{activeIndex != 1}}" class="tab-cont">
+  <!--总计-->
+  <view class="total-num" wx:if="{{!defaultBool}}">
+    累计受访8次，当月受访2次
+  </view>
+  <view class="border-line" wx:if="{{!defaultBool}}"></view>
+  <!--拜访记录列表-->
+  <block wx:for="{{taskPage}}" wx:key="*this" wx:if="{{!defaultBool}}">
+    <navigator class="visit-record_item">
+      <view class="visit-record_time">
+        <view class="screws-line"></view>
+        <view class="visit-record_time_body">
+          <view class="record-time_year">{{item.plan_time}}</view>
+          <view class="record-time_date">{{item.plan_date}}</view>
+        </view>
+      </view>
+      <view class="visit-record_cont">
+        <view class="visit-record_cont_item">
+          <view class="visit-record_cont_tit">沟通事项：</view>
+          <view class="visit-record_cont_body">{{item.summary}}</view>
+        </view>
+        <view class="visit-record_cont_item">
+          <view class="visit-record_cont_tit">沟通产品：</view>
+          <view class="visit-record_cont_body">{{item.execute_goods_name}}</view>
+        </view>
+        <block wx:for="{{item.taskPhotoList}}" wx:key="*this">
+          <view class="">
+            <image src="{{item.thumbnail_name}}" class="visit-record_cont_img" id="{{item.task_photo_id}}"></image>
+          </view>
+        </block>
+      </view>
+      <view class="arrow-right"></view>
+    </navigator>
+  </block>
+  <!--缺省图案-->
+  <view class="default-page" wx:if="{{defaultBool}}">
+    <image src="http://xsj.jooyum.com.cn/resource/img_no_content.png" class="default-img"></image>
+    <view>暂无数据</view>
+  </view>
+</view>
+
+<!--基本信息-->
+<view hidden="{{activeIndex != 0}}" class="tab-cont">
+  <view class="spacer"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">所属医院</view>
+    <view class="basic-info_body">{{client_name}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">科室<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{department_name}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">职位<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{duty}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">职称<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{job}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">客户等级</view>
+    <view class="basic-info_body">{{level}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">备注<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{remark}}</view>
+  </view>
+</view>
+
+<!--相关资讯-->
+<view hidden="{{activeIndex != 2}}" class="tab-cont">
+  <view class="spacer"></view>
+  <view class="related-info_cont" wx:if="{{!defaultThirdDoctor}}">
+    <view class="related-info_item">
+      <view class="related-info_tit">所属医院</view>
+      <view class="related-info_body">
+        {{hospital_name}}
+      </view>
+    </view>
+    <view class="related-info_item">
+      <view class="related-info_tit">医院等级</view>
+      <view class="related-info_body">
+        {{hospital_level}}
+      </view>
+    </view>
+    <view class="related-info_item">
+      <view class="related-info_tit">医院总机</view>
+      <view class="related-info_body">
+        <view>{{hospital_tel}}</view>
+      </view>
+    </view>
+    <view class="related-info_item">
+      <view class="related-info_tit">医院地址</view>
+      <view class="related-info_body">
+        {{hospital_address}}
+      </view>
+    </view>
+  </view>
+  <view class="related-info_cont" wx:if="{{!defaultThirdDoctor}}">
+    <view class="related-info_item">
+      <view class="related-info_tit">门诊时间</view>
+      <view class="related-info_body">
+        门诊发布时间：{{publish_time}}
+      </view>
+    </view>
+    <view class="related-info_item_table">
+      <view class="related-info_table_tr table-tr_first">
+        <view class="related-info_table_td"></view>
+        <view class="related-info_table_td">一</view>
+        <view class="related-info_table_td">二</view>
+        <view class="related-info_table_td">三</view>
+        <view class="related-info_table_td">四</view>
+        <view class="related-info_table_td">五</view>
+        <view class="related-info_table_td">六</view>
+        <view class="related-info_table_td">日</view>
+      </view>
+      <view class="related-info_table_tr">
+        <view class="related-info_table_td">上午</view>
+        <block wx:for="{{am}}">
+          <view class="related-info_table_td {{item ===''?'':'plan-color'}}"></view>
+        </block>
+      </view>
+      <view class="related-info_table_tr">
+        <view class="related-info_table_td">下午</view>
+        <block wx:for="{{pm}}">
+          <view class="related-info_table_td {{item ===''?'':'plan-color'}}"></view>
+        </block>
+      </view>
+      <view class="related-info_table_tr">
+        <view class="related-info_table_td">晚上</view>
+        <block wx:for="{{night}}">
+          <view class="related-info_table_td {{item ===''?'':'plan-color'}}"></view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="related-info_cont" wx:if="{{!defaultThirdDoctor}}">
+    <view class="related-info_item">
+      <view class="related-info_tit">擅长<view class="hidden">占位</view></view>
+      <view class="related-info_body">
+        {{good_at}}
+      </view>
+    </view>
+  </view>
+  <view class="related-info_cont" wx:if="{{!defaultThirdDoctor}}">
+    <view class="related-info_item">
+      <view class="related-info_tit">职业经历</view>
+      <view class="related-info_body">
+        {{detail}}
+      </view>
+    </view>
+  </view>
+  <view class="related-info_cont" wx:if="{{!defaultThirdDoctor}}">
+    <view class="related-info_item">
+      <view class="related-info_tit">投票患者</view>
+      <view class="related-info_body">
+        {{patient_vote}}
+      </view>
+    </view>
+  </view>
+  <!--缺省图案-->
+  <view class="default-page" wx:if="{{defaultThirdDoctor}}">
+    <image src="http://xsj.jooyum.com.cn/resource/img_no_content.png" class="default-img"></image>
+    <view>暂无数据</view>
+  </view>
+</view>
+
+<!--footer-fun-->
+<view class="footer-fun">
+  <navigator url="../add-customer/add-customer?doctor_id={{doctorId}}" class="footer-fun_edit">
+    <image src="../../img/icon_edit.svg" class="footer-fun_edit_img"></image>
+    编辑资料
+  </navigator>
+  <navigator url="" class="footer-fun_action" hover-class="footer-fun_action_hover">
+    立即拜访
+  </navigator>
+</view>

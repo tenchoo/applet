@@ -1,0 +1,37 @@
+<view class="header">
+  <view class="header-date">
+    <view>{{year}}年{{month}}月{{day}}日</view>
+    <!--<view class="arrow-right"></view>-->
+  </view>
+  <navigator url="../visit-detail-edit/visit-detail-edit?task_id={{taskRow.task_id}}&summary={{taskRow.summary}}&plain_time={{taskRow.plan_time}}&plan_date={{taskRow.plan_date}}" class="header-edit">
+    <image src="../../img/icon_edit.svg" class="header-edit_icon"></image>
+    <view>编辑</view>
+  </navigator>
+</view>
+<view class="visit-body">
+  <view class="visit-body_item">
+    <view class="visit-body_list">
+      <view class="visit-body_list_head">拜访对象</view>
+      <view class="visit-body_list_body">{{taskRow.name}}</view>
+    </view>
+    <view class="visit-body_list">
+      <view class="visit-body_list_head">沟通产品</view>
+      <view class="visit-body_list_body">{{taskRow.execute_goods_name}}</view>
+    </view>
+    <view class="visit-body_list">
+      <view class="visit-body_list_head">沟通事项</view>
+      <view class="visit-body_list_body">{{taskRow.summary}}</view>
+    </view>
+  </view>
+  <view class="visit-body_item">
+    <view class="visit-body_tit">照片</view>
+    <view class="border-line"></view>
+    <view class="img-cont">
+      <block wx:for="{{taskPhotoList}}" wx:key="*this">
+        <view class="img-cont_item">
+          <image src="{{item.thumbnail_name}}" data-src="{{item.file_name}}" bindtap="viewPhoto" id="{{item.task_photo_id}}" class="img-cont_item_image"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

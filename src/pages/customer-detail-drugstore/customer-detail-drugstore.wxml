@@ -1,0 +1,107 @@
+<view class="border-line"></view>
+<view class="header">
+  <view class="header-left">
+    <view class="header-customer_name">{{clientRow.name}}</view>
+    <!--<view>{{department_name}}</view>-->
+    <!--<view class="header-customer_position">{{job}}</view>-->
+    <!--<view>{{duty}}</view>-->
+  </view>
+  <image src="../../img/icon_sign_stars_default.svg" bindtap="toggleStar" wx:if="{{'0' === star_mark}}" class="header-customer_star"></image>
+  <image src="../../img/icon_sign_stars_pressed.svg" bindtap="toggleStar" wx:if="{{'1' === star_mark}}" class="header-customer_star"></image>
+</view>
+<view class="border-line"></view>
+<!--tab切换-->
+<view class="tabs">
+  <block  wx:for="{{tabs}}" wx:key="*this">
+    <view id="{{index}}" class="tabs-item {{activeIndex == index ? 'tabs-item_on' : ''}}" bindtap="tabClick">{{item}}</view>
+  </block>
+</view>
+<view class="border-line"></view>
+<!--拜访记录-->
+<view hidden="{{activeIndex != 1}}" class="tab-cont">
+  <!--总计-->
+  <view class="total-num">
+    累计受访8次，当月受访2次
+  </view>
+  <view class="border-line"></view>
+  <!--拜访记录列表-->
+  <block wx:for="{{taskPage}}" wx:key="*this">
+    <navigator class="visit-record_item">
+      <view class="visit-record_time">
+        <view class="screws-line"></view>
+        <view class="visit-record_time_body">
+          <view class="record-time_year">{{item.plan_time}}</view>
+          <view class="record-time_date">{{item.plan_date}}</view>
+        </view>
+      </view>
+      <view class="visit-record_cont">
+        <view class="visit-record_cont_item">
+          <view class="visit-record_cont_tit">沟通事项：</view>
+          <view class="visit-record_cont_body">{{item.summary}}</view>
+        </view>
+        <view class="visit-record_cont_item">
+          <view class="visit-record_cont_tit">沟通产品：</view>
+          <view class="visit-record_cont_body">{{item.execute_goods_name}}</view>
+        </view>
+        <block wx:for="{{item.taskPhotoList}}" wx:key="*this">
+          <view class="">
+            <image src="{{item.thumbnail_name}}" class="visit-record_cont_img" id="{{item.task_photo_id}}"></image>
+          </view>
+        </block>
+      </view>
+      <view class="arrow-right"></view>
+    </navigator>
+  </block>
+</view>
+
+<!--基本信息-->
+<view hidden="{{activeIndex != 0}}" class="tab-cont">
+  <view class="spacer"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">连锁品牌</view>
+    <view class="basic-info_body">{{clientRow.brand}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">是否医保</view>
+    <view class="basic-info_body" wx:if="{{clientRow.is_healthcare==='1'}}">是</view>
+    <view class="basic-info_body" wx:if="{{clientRow.is_healthcare==='0'}}">否</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">客户等级</view>
+    <view class="basic-info_body">{{clientRow.level}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item">
+    <view class="basic-info_tit">地址<view class="hidden">占位</view></view>
+    <view class="basic-info_body">{{clientRow.address}}</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="basic-info_item map-cont">
+    <map id="map" longitude="113.324520" latitude="23.099994" scale="14" style="width: 100%; height: 100%;"></map>
+  </view>
+</view>
+
+
+<!--footer-fun-->
+<view class="footer-fun">
+  <navigator url="../add-customer/add-customer?doctor_id={{doctorId}}" class="footer-fun_edit">
+    <image src="../../img/icon_edit.svg" class="footer-fun_edit_img"></image>
+    编辑资料
+  </navigator>
+  <navigator url="" class="footer-fun_action" hover-class="footer-fun_action_hover">
+    立即拜访
+  </navigator>
+</view>
+
+<!--footer-fun 添加客户-->
+<view class="footer-fun">
+  <navigator url="../add-customer/add-customer?doctor_id={{doctorId}}" class="footer-fun_edit">
+    <image src="http://xsj.jooyum.com.cn/resource/icon_add_to_grey.svg" class="footer-fun_edit_img"></image>
+    添加到我的客户
+  </navigator>
+  <navigator url="" class="footer-fun_action" hover-class="footer-fun_action_hover">
+    立即拜访
+  </navigator>
+</view>

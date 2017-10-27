@@ -1,0 +1,18 @@
+/*右箭头*/
+.arrow-right:after{
+  border-top-color:#ddd;
+  border-right-color:#ddd;
+}
+.basic-info_body{
+  color:#6889fd;
+}
+/*底部按钮*/
+.footer-fun{
+  padding: 16rpx 40rpx;
+  height:112rpx;
+}
+.btn-sure{
+  width:100%;
+  font-size:30rpx;
+  line-height:3;
+}

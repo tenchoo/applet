@@ -1,0 +1,32 @@
+<image src="http://xsj.jooyum.com.cn/resource/img_banner_product.png" class="head-img"></image>
+<view class="border-line"></view>
+<view class="container">
+  <view class="th">
+    <view class="th-prd_name">产品名</view>
+    <view class="th-prd_spec">规格</view>
+    <view class="th-prd_del"></view>
+  </view>
+  <view class="border-line"></view>
+  <block wx:for="{{goodsList}}" wx:key="*this" wx:if="{{goodsList}}">
+    <view class="th td">
+      <view class="th-prd_name td-prd_name"><input type="text" value="{{item.name}}" disabled="{{editBool}}"/></view>
+      <view class="th-prd_spec"><input type="text" value="{{item.spec}}" disabled="{{editBool}}"/></view>
+      <view class="th-prd_del">
+        <image src="http://xsj.jooyum.com.cn/resource/icon_delete.svg" wx:if="{{!editBool}}" class="icon-del" data-id="{{item.goods_id}}" data-index="{{index}}" catchtap="delGoods"></image>
+      </view>
+    </view>
+    <view class="border-line"></view>
+  </block>
+
+  <!--新增按钮-->
+  <view class="btn-add" wx:if="{{!editBool}}">
+    <image src="http://xsj.jooyum.com.cn/resource/icon_add.svg" class="icon-btn_add"></image>
+    <view>新增</view>
+  </view>
+</view>
+
+<!--footer-fun-->
+<view class="footer-fun">
+  <button class="btn-sure btn-blue" hover-class="btn-blue_hover" bindtap="toEdit" wx:if="{{editBool}}">编辑产品库</button>
+  <button class="btn-sure btn-blue" hover-class="btn-blue_hover" bindtap="" wx:if="{{!editBool}}">完成</button>
+</view>

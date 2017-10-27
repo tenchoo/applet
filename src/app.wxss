@@ -1,0 +1,15 @@
+@import 'common/style/common.wxss';
+@import 'common/style/media.wxss';
+
+page,view, swiper, swiper-item, image, block,input,label {
+  box-sizing: border-box;
+  font-family: 'Microsoft YaHei UI'!important;
+}
+
+page{
+  font-size: 24rpx;
+  color: #83889a;
+  background: #eff3f6;
+}
+
+

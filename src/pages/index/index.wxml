@@ -1,0 +1,114 @@
+<import src="../../common/template/template.wxml"/>
+<view class="header">
+  <!--地区选择-->
+  <navigator class="area-selection" hover-class="none">
+    <view>{{province}}</view>
+    <view class="arrow-right"></view>
+  </navigator>
+  <!--swiper-->
+  <swiper class="swiper" circular="true" interval="2000" autoplay="true">
+    <block wx:for="{{bannerUrl}}" wx:key="{{index}}">
+      <swiper-item>
+        <navigator url="{{item.navUrl}}" class="swiper-navigator" hover-class="none">
+          <image src="{{item.imgUrl}}" class="swiper-img"></image>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+
+<!--navbar-->
+<view class="navbar">
+  <navigator url="../my-customer/my-customer" class="navbar-item" hover-class="none">
+    <image class="navbar-img" src="../../img/icon_my_client.svg"></image>
+    <view class="navbar-tit">我的客户</view>
+  </navigator>
+  <navigator url="../my-visit/my-visit" class="navbar-item" hover-class="none">
+    <image class="navbar-img" src="../../img/icon_my_visit.svg"></image>
+    <view class="navbar-tit">我的拜访</view>
+  </navigator>
+  <navigator url="../cloud-doctor/cloud-doctor" class="navbar-item" hover-class="none">
+    <image class="navbar-img" src="../../img/icon_dr_cloud.svg"></image>
+    <view class="navbar-tit">云医生</view>
+  </navigator>
+  <navigator url="../cloud-drugstore/cloud-drugstore" class="navbar-item" hover-class="none">
+    <image class="navbar-img" src="../../img/icon_pharmacy_cloud.svg"></image>
+    <view class="navbar-tit">云药店</view>
+  </navigator>
+</view>
+<!--notice board-->
+<view class="border-line"></view>
+
+
+<!--<view class="havetry" >-->
+  <!--&lt;!&ndash;<input class="inputtry"> </input>>&ndash;&gt;-->
+<!--</view>-->
+
+<view class="notice-board">
+  <image class="notice-img" src="../../img/img_user_instructions.png"></image>
+  <!--公告内容-->
+  <view class="notice-content_container">
+    <swiper class="notice-content_swiper" circular="true" interval="5000" autoplay="true" vertical="true">
+      <block wx:for="{{noticeContent}}" wx:key="{{index}}">
+        <swiper-item>
+          <navigator url="{{item.url}}" class="notice-content_navigator" hover-class="none">{{item.content}}</navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<view class="border-line"></view>
+<!--今日成就-->
+<view class="section">
+  <view class="border-line"></view>
+  <view class="section-tit">
+    <image src="../../img/icon_achievement.svg" class="section-tit_img"></image>
+    <view>今日成就</view>
+    <view class="share-today_achievement" animation="{{achievementShareBee}}">
+      <image class="share-ta_bee" src="../../img/img_share_animation_1.png"></image>
+      <image class="share-ta_heart" src="../../img/img_share_animation_3.png" animation="{{achievementShareHeart}}"></image>
+      <image class="share-ta_btn" src="../../img/img_share_animation_2.png" bindtap="shareAchievementUrl" animation="{{achievementShareBtn}}"></image>
+    </view>
+  </view>
+  <view class="border-line"></view>
+  <view class="section-body today-achievement">
+    <view class="charts-today_achievement charts-today_achievement_left"></view>
+    <view class="charts-today_achievement"></view>
+  </view>
+  <view class="border-line"></view>
+</view>
+<!--今日行程-->
+<view class="section">
+  <view class="border-line"></view>
+  <view class="section-tit">
+    <image src="../../img/icon_today_trip.svg" class="section-tit_img"></image>
+    <view>今日行程</view>
+  </view>
+  <view class="border-line"></view>
+  <view class="section-body">
+    <!--今日行程列表-->
+    <template is="todayTrip" data="{{todayTripData}}"></template>
+    <view class="no-data" wx:if="{{!todayTripData}}">暂无数据</view>
+  </view>
+  <view class="section-foot">
+    <button class="btn-destory" hover-class="btn-destory_hover" hover-stop-propagation="true" bindtap="clearData">一键销毁数据</button>
+  </view>
+  <view class="border-line"></view>
+</view>
+
+<!--更多功能 浮动按钮-->
+<movable-area class="float-fun">
+  <navigator url="../volume-create-visit/volume-create-visit" class="float-navigator {{floatBtnTapData?'float-navigator_second':''}}">
+    <view class="float-navigator_tit {{floatBtnTapData?'float-navigator_tit_move':''}}">批量创建拜访</view>
+    <image src="http://xsj.jooyum.com.cn/resource/icon_batch_visit.svg" class="float-img"></image>
+  </navigator>
+  <navigator url="../visit-customer/visit-customer" class="float-navigator {{floatBtnTapData?'float-navigator_first':''}}">
+    <view class="float-navigator_tit {{floatBtnTapData?'float-navigator_tit_move':''}}">单次创建拜访</view>
+    <image src="http://xsj.jooyum.com.cn/resource/icon_hospital_visit.svg" class="float-img"></image>
+  </navigator>
+
+  <movable-view bindtap="floatBtnTap" class="float-fun_btn {{floatBtnTapData?'float-fun_btn_click':''}}" direction="all" x="1000" y="1000" out-of-bounds="true"></movable-view>
+</movable-area>
+<!--蒙版-->
+<view class="masking" wx:if="{{floatBtnTapData}}"></view>
